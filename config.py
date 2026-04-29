@@ -1,7 +1,9 @@
 import os
 
-SYMBOLS = ["BEL.NS", "BHEL.NS", "CGPOWER.NS"]
+import pandas as pd
 
+df = pd.read_excel("your_file.xlsx")
+SYMBOLS = [s + ".NS" for s in df["Symbol"]]
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
